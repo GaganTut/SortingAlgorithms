@@ -7,6 +7,9 @@ const createBubbleButton = ()=> {
   newButton.style.position = "fixed";
   newButton.style.top = "50px";
   newButton.style.left = "45%";
+  newButton.addEventListener("click", () => {
+    visualBubble();
+  });
 
   let parent = document.querySelector("#wholeBody");
   parent.appendChild(newButton);
@@ -29,8 +32,8 @@ const animNodes = (node) => {
   node.removeAttribute("animation");
   node.previousSibling.removeAttribute("animation");
 
-  node.setAttribute("animation", `property: material.color; dir: alternate; dur: 300; loop: false; to: red`);
-  node.previousSibling.setAttribute("animation", `property: material.color; dir: alternate; dur: 300; loop: false; to: red`);
+  node.setAttribute("animation", "property: material.color; dir: alternate; dur: 300; loop: false; to: red");
+  node.previousSibling.setAttribute("animation", "property: material.color; dir: alternate; dur: 300; loop: false; to: red");
 };
 
 const visualBubble = () => {
@@ -62,3 +65,5 @@ const visualBubble = () => {
   miniTimeout(0);
   return;
 };
+
+createBubbleButton();

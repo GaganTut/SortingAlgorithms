@@ -7,6 +7,9 @@ const createSelectionButton = ()=> {
   newButton.style.position = "fixed";
   newButton.style.top = "70px";
   newButton.style.left = "45%";
+  newButton.addEventListener("click", () => {
+    visualSelection();
+  });
 
   let parent = document.querySelector("#wholeBody");
   parent.appendChild(newButton);
@@ -15,40 +18,44 @@ const createSelectionButton = ()=> {
 };
 
 const pushNode = (node) => {
+  let valueArr = document.querySelectorAll(".customPlanes");
+
   node.parentNode.appendChild(node);
-  node.removeAttribute("animation");
-  node.nextElementSibling.removeAttribute("animation");
-  node.setAttribute("material", "color: lightblue");
-  node.setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(node.getAttribute("planeVal"))}`);
-  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-  node.setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) - 7)}`);
+  for (let i = 0; i < valueArr.length; i++) {
+    valueArr[i].removeAttribute("animation");
+    valueArr[i].setAttribute("material", "color: lightblue");
+    valueArr[i].setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(valueArr[i].getAttribute("planeVal"))}`);
+    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
+    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]) - 6)}`);
+  }
 };
 
-const animNodes = (node) => {
-  node.removeAttribute("animation");
-  node.previousSibling.removeAttribute("animation");
-
-  node.setAttribute("animation", `property: material.color; dir: alternate; dur: 300; loop: false; to: none`);
-  node.previousSibling.setAttribute("animation", `property: material.color; dir: alternate; dur: 300; loop: false; to: none`);
-};
 
 const visualSelection = () => {
-  let valueArr = document.querySelectorAll(".customPlanes");
   let parent = document.querySelector("#wholeScene");
-  let maxNum = 0;
 
-  const miniTimeout = (i) => {
-    setTimeout(()=> {testPass(i);}, 600);
-  };
-  const testPass = (i) => {
-    if (collection[i] >= maxNum[0]) {
-      maxNum = [collection[i]];
-    }
-    i++;
-    if(i < valueArr.length - 1) {
-      miniTimeout(i);
-    }
+  const selectionTime = (j) => {
+    setTimeout(() => {
+      eachPass(j);
+    }, 1000);
   };
 
-  miniTimeout(0);
+  const eachPass = (j) => {
+    let valueArr = document.querySelectorAll(".customPlanes");
+    let maxNum = valueArr[0];
+    for (let i = 0; i < valueArr.length - j; i++) {
+      if(Number(valueArr[i].getAttribute("planeVal")) < Number(maxNum.getAttribute("planeVal"))) {
+        maxNum = valueArr[i];
+      }
+    }
+    pushNode(maxNum, j);
+    j++;
+    if(j < valueArr.length) {
+      selectionTime(j);
+    }
+  };
+
+  selectionTime(0);
 };
+
+createSelectionButton();
