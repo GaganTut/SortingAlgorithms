@@ -9,12 +9,17 @@ The bubble sort method traverses through an array and compares each value with t
 flag = true;
 
 for loop through collection;
+
 if collection value > following collection value;
+
   first value = second value;
+
   second value = first value;
+
   flag = false;
 
 if flag is false;
+
   recursively rerun function to loop more;
 
 return collection;
