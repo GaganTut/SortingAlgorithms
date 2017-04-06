@@ -1,3 +1,4 @@
+/*jshint esversion: 6*/
 function createUserInput(parentID, createID, position) {
   let newInput = document.createElement("input");
   newInput.id = createID;

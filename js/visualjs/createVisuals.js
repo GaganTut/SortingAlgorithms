@@ -6,14 +6,20 @@ const getPositions = (key) => {
     2: "-6 2 -15",
     3: "-4 2 -15",
     4: "-2 2 -15",
-    5: "2 2 -15",
-    6: "4 2 -15",
-    7: "6 2 -15",
-    8: "8 2 -15",
-    9: "10 2 -15",
+    5: "0 2 -15",
+    6: "2 2 -15",
+    7: "4 2 -15",
+    8: "6 2 -15",
+    9: "8 2 -15",
   };
 
   return positionObject[key];
+};
+const removeNumPlanes = () => {
+  let oldVals = document.querySelector(".customPlanes");
+  for (let i = 0; i < oldVals.length; i++) {
+    oldVals[i].parentNode.removeChild(oldVals[i]);
+  }
 };
 
 const createNumEntity = (parent, value, position) => {
