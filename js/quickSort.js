@@ -17,7 +17,7 @@ const quickSort = (collection) => {
       leftArr.push(collection[i]);
     }
   }
-  return quickSort(leftArr).concat(midArr.concat(quickSort(rightArr)));
+  return quickSort(leftArr).concat(midArr, quickSort(rightArr));
 };
 
 
