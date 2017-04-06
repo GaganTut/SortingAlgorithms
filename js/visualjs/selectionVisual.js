@@ -1,5 +1,5 @@
 /*jshint esversion: 6*/
-/*const createSelectionButton = ()=> {
+const createSelectionButton = ()=> {
   let newButton = document.createElement("button");
   newButton.id = "selectionBtn";
   newButton.innerHTML = "Selection Sort";
@@ -51,4 +51,4 @@ const visualSelection = () => {
   };
 
   miniTimeout(0);
-};*/
+};
