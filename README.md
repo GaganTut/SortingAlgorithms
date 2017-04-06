@@ -1,4 +1,5 @@
 # SortingAlgorithms
+![alt tag](https://travis-ci.org/GaganTut/SortingAlgorithms.svg?branch=master)
 ### This repository contains various sorting algorithms used to sort collections of data. There is also visual examples through the HTML.
 
 ## Bubble Sort
