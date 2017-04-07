@@ -32,7 +32,7 @@ const animNodes = (node) => {
   node.removeAttribute("animation");
   node.previousSibling.removeAttribute("animation");
 
-  node.setAttribute("animation", "property: rotation; dir: alternate; dur: 100; loop: false; to: 0 90 0");
+  node.setAttribute("animation", "property: rotation; dir: alternate; dur: 200; loop: false; to: 0 90 0");
   node.previousSibling.setAttribute("animation", "property: rotation; dir: alternate; dur: 100; loop: false; to: 0 90 0");
 };
 
@@ -43,7 +43,7 @@ const visualBubble = () => {
   let cleanPass = true;
 
   const miniTimeout = (i) => {
-    setTimeout(()=> {testPass(i);}, 600);
+    setTimeout(()=> {testPass(i);}, 1000);
   };
 
   const testPass = (i) => {
