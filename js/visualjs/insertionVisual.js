@@ -6,12 +6,12 @@ const swapWithPrev = (node) => {
   node.removeAttribute("animation");
   node.nextElementSibling.removeAttribute("animation");
 
-  node.setAttribute("material", "color: lightblue");
-  node.setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(node.getAttribute("planeVal"))}`);
-  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-  node.setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) - 6)}`);
-
-  node.nextElementSibling.setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) - 5)}`);
+  node.setAttribute("material", "color: lime");
+  node.setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(node.getAttribute("planeVal"))/4}`);
+  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
+  node.setAttribute("animation", `property: position; dir: normal; dur: 100; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node))}`);
+  node.setAttribute("animation__", `property: material; dir: alternate; from: color:lime; dur: 100; loop: false; to: color:yellow`);
+  node.nextElementSibling.setAttribute("animation", `property: position; dir: normal; dur: 100; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) + 1)}`);
 };
 
 const insertAtBeginning = (node) => {
@@ -19,10 +19,11 @@ const insertAtBeginning = (node) => {
   node.parentNode.insertBefore(node, valueArr[0]);
 
   node.removeAttribute("animation");
-  node.setAttribute("material", "color: lightblue");
-  node.setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(node.getAttribute("planeVal"))}`);
-  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-  node.setAttribute("animation", `property: position; dir: normal; dur: 100; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) - 6)}`);
+  node.setAttribute("material", "color: lime");
+  node.setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(node.getAttribute("planeVal"))/4}`);
+  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
+  node.setAttribute("animation", `property: position; dir: normal; dur: 100; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node))}`);
+  node.setAttribute("animation__", `property: material; dir: alternate; from: color:lime; dur: 100; loop: false; to: color:yellow`);
 };
 
 const visualInsertion = () => {
@@ -31,7 +32,7 @@ const visualInsertion = () => {
   const outerLoop = (j) => {
     setTimeout(() => {
       loopValues(j);
-    }, 1000);
+    }, 500);
   };
 
   const innerLoop = (l) => {

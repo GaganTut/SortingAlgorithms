@@ -2,7 +2,6 @@
 const swapNodes = (node) => {
   node.parentNode.insertBefore(node, node.previousSibling);
   nodeIndex = Array.from(node.parentNode.children).indexOf(node);
-  console.log(nodeIndex, node);
   node.removeAttribute("animation");
   node.nextElementSibling.removeAttribute("animation");
   node.setAttribute("material", "color: lime");
