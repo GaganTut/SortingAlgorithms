@@ -1,13 +1,15 @@
 /*jshint esversion: 6*/
 const swapNodes = (node) => {
   node.parentNode.insertBefore(node, node.previousSibling);
+  nodeIndex = Array.from(node.parentNode.children).indexOf(node);
+  console.log(nodeIndex, node);
   node.removeAttribute("animation");
   node.nextElementSibling.removeAttribute("animation");
-  node.setAttribute("material", "color: lightblue");
-  node.setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(node.getAttribute("planeVal"))}`);
-  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-  node.setAttribute("animation", `property: position; dir: normal; dur: 400; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) - 6)}`);
-  node.nextElementSibling.setAttribute("animation", `property: position; dir: normal; dur: 400; loop: false; to: ${getPositions(Array.from(node.parentNode.children).indexOf(node) - 5)}`);
+  node.setAttribute("material", "color: lime");
+  node.setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(node.getAttribute("planeVal"))/4}`);
+  node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
+  node.setAttribute("animation", `property: position; dir: normal; dur: 200; loop: false; to: ${getPositions(nodeIndex)}`);
+  node.nextElementSibling.setAttribute("animation", `property: position; dir: normal; dur: 200; loop: false; to: ${getPositions(nodeIndex + 1)}`);
 };
 
 const animNodes = (node) => {
@@ -24,7 +26,7 @@ const visualBubble = () => {
   let cleanPass = true;
 
   const miniTimeout = (i) => {
-    setTimeout(()=> {testPass(i);}, 1000);
+    setTimeout(()=> {testPass(i);}, 500);
   };
 
   const testPass = (i) => {
@@ -43,7 +45,6 @@ const visualBubble = () => {
       }
     }
   };
-
   miniTimeout(0);
   return;
 };

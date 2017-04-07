@@ -2,7 +2,7 @@
 function createUserInput(parentID, createID, position) {
   let newInput = document.createElement("input");
   newInput.id = createID;
-  newInput.placeholder = "Enter Number";
+  newInput.placeholder = "New Value";
 
   let parent = document.querySelector(parentID);
   parent.appendChild(newInput);
@@ -20,6 +20,6 @@ let userInputBtn = createButton("createBtn", "Create List");
 userInputBtn.addEventListener("click", () => {
   let userInputs = document.querySelectorAll("input");
   for (var i = 0; i < userInputs.length; i++) {
-    createNumEntity("#wholeScene", Number(userInputs[i].value), i);
+    createNumEntity("#wholeScene", Number(userInputs[i].value), i * 2);
   }
 });

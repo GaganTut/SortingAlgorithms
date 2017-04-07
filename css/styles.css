@@ -7,7 +7,7 @@ button {
   background-color: lime;
   color: navy;
   height: 5%;
-  font-size: 20px;
+  font-size: 100%;
   position: fixed;
   width: 10%;
 }
@@ -22,7 +22,17 @@ input {
 
 input::placeholder {
   color: navy;
-  font-size: 11px;
+  font-size: 100%;
+}
+
+#topTitle {
+  color: lime;
+  height: 10%;
+  left: 25%;
+  position: fixed;
+  text-align: center;
+  top: -1%;
+  width: 50%;
 }
 
 #value0 {
@@ -67,31 +77,30 @@ input::placeholder {
 
 #createBtn {
   bottom: 2%;
-  font-size: 25px;
   left: 45%;
 }
 
 #bubbleBtn {
-  top: 2%;
+  top: 8%;
   left: 15%;
 }
 
 #quickBtn {
-  top: 2%;
+  top: 8%;
   left: 30%;
 }
 
 #selectionBtn {
-  top: 2%;
+  top: 8%;
   left: 45%;
 }
 
 #insertionBtn {
-  top: 2%;
+  top: 8%;
   right: 30%;
 }
 
 #mergeBtn {
-  top: 2%;
+  top: 8%;
   right: 15%;
 }
