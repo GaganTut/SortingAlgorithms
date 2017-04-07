@@ -134,6 +134,10 @@ input::placeholder {
   bottom: 1%;
   right: 30%;
 }
+#randomBtn {
+  bottom: 1%;
+  left: 45%;
+}
 #bubbleBtn {
   top: 8%;
   left: 15%;

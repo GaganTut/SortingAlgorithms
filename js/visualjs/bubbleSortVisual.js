@@ -5,7 +5,7 @@ const swapNodes = (node) => {
   node.removeAttribute("animation");
   node.nextElementSibling.removeAttribute("animation");
   node.setAttribute("material", "color: lime");
-  node.setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(node.getAttribute("planeVal"))/4}`);
+  node.setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(node.getAttribute("planeVal"))/4 + 0.5}`);
   node.setAttribute("text", `value: ${Number(node.getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
   node.setAttribute("animation", `property: position; dir: normal; dur: 200; loop: false; to: ${getPositions(nodeIndex)}`);
   node.nextElementSibling.setAttribute("animation", `property: position; dir: normal; dur: 200; loop: false; to: ${getPositions(nodeIndex + 1)}`);
