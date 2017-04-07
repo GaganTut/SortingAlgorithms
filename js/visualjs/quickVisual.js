@@ -7,10 +7,10 @@ const alignNodesBefore = (nodeArray, reference) => {
   }
   for (let i = 0; i < valueArr.length; i++) {
     valueArr[i].removeAttribute("animation");
-    valueArr[i].setAttribute("material", "color: lightblue");
-    valueArr[i].setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(valueArr[i].getAttribute("planeVal"))}`);
-    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]) - 6)}`);
+    valueArr[i].setAttribute("material", "color: lime");
+    valueArr[i].setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(valueArr[i].getAttribute("planeVal"))/4}`);
+    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
+    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]))}`);
   }
 };
 
@@ -21,16 +21,16 @@ const alignNodesAfter = (nodeArray, reference) => {
   }
   for (let i = 0; i < valueArr.length; i++) {
     valueArr[i].removeAttribute("animation");
-    valueArr[i].setAttribute("material", "color: lightblue");
-    valueArr[i].setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(valueArr[i].getAttribute("planeVal"))}`);
-    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]) - 6)}`);
+    valueArr[i].setAttribute("material", "color: lime");
+    valueArr[i].setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(valueArr[i].getAttribute("planeVal"))/4}`);
+    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
+    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]))}`);
   }
 };
 
 const animMiddle = (node) => {
   node.removeAttribute("animation");
-  node.setAttribute("animation", `property: material; dir: normal; dur: 500; loop: false; to: color: red`);
+  node.setAttribute("animation__", `property: material; dir: normal; dur: 800; loop: false; to: color: yellow`);
 };
 
 const visualQuick = (nodeArray) => {
@@ -52,11 +52,11 @@ const visualQuick = (nodeArray) => {
   animMiddle(middleArr[0]);
 
   setTimeout(() => {
-    alignNodesBefore(leftArr, middleArr[0]);
+    alignNodesBefore(rightArr, middleArr[0]);
   }, 1000);
 
   setTimeout(() => {
-    alignNodesAfter(rightArr,middleArr[middleArr.length -1]);
+    alignNodesAfter(leftArr,middleArr[middleArr.length -1]);
   }, 1000);
 
   setTimeout(() => {

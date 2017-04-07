@@ -6,10 +6,10 @@ const pushNode = (node) => {
   node.parentNode.appendChild(node);
   for (let i = 0; i < valueArr.length; i++) {
     valueArr[i].removeAttribute("animation");
-    valueArr[i].setAttribute("material", "color: lightblue");
-    valueArr[i].setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(valueArr[i].getAttribute("planeVal"))}`);
-    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]) - 6)}`);
+    valueArr[i].setAttribute("material", "color: lime");
+    valueArr[i].setAttribute("geometry", `primitive: plane; width: 0.95; height: ${Number(valueArr[i].getAttribute("planeVal"))/4}`);
+    valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 10`);
+    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 400; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]))}`);
   }
 };
 
@@ -20,7 +20,7 @@ const visualSelection = () => {
   const selectionTime = (j) => {
     setTimeout(() => {
       eachPass(j);
-    }, 1000);
+    }, 500);
   };
 
   const eachPass = (j) => {
