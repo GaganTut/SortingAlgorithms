@@ -46,13 +46,13 @@ const alignNodesAfter = (nodeArray, reference) => {
     valueArr[i].setAttribute("material", "color: lightblue");
     valueArr[i].setAttribute("geometry", `primitive: plane; width: 1; height: ${Number(valueArr[i].getAttribute("planeVal"))}`);
     valueArr[i].setAttribute("text", `value: ${Number(valueArr[i].getAttribute("planeVal"))}; color: black; align: center; font: dejavu; width: 15`);
-    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 200; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]) - 6)}`);
+    valueArr[i].setAttribute("animation", `property: position; dir: normal; dur: 500; loop: false; to: ${getPositions(Array.from(valueArr[i].parentNode.children).indexOf(valueArr[i]) - 6)}`);
   }
 };
 
 const animMiddle = (node) => {
   node.removeAttribute("animation");
-  node.setAttribute("animation", `property: rotation; dir: alternate; dur: 500; loop: false; to: 0 180 0`);
+  node.setAttribute("animation", `property: material; dir: normal; dur: 500; loop: false; to: color: red`);
 };
 
 const visualQuick = (nodeArray) => {
