@@ -3,10 +3,6 @@ const createQuickButton = ()=> {
   let newButton = document.createElement("button");
   newButton.id = "quickBtn";
   newButton.innerHTML = "Quick Sort";
-  newButton.width = "10%";
-  newButton.style.position = "fixed";
-  newButton.style.top = "110px";
-  newButton.style.left = "45%";
   newButton.addEventListener("click", () => {
     let valueArr = document.querySelectorAll(".customPlanes");
     let nodeArray = [];

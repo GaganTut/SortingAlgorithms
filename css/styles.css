@@ -1,0 +1,97 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  background-color: lime;
+  color: navy;
+  height: 5%;
+  font-size: 20px;
+  position: fixed;
+  width: 10%;
+}
+input {
+  background-color: beige;
+  bottom: 10%;
+  color: red;
+  height: 2%;
+  position: fixed;
+  width: 4%;
+}
+
+input::placeholder {
+  color: navy;
+  font-size: 11px;
+}
+
+#value0 {
+  left: 21%;
+}
+
+#value1 {
+  left: 27%;
+}
+
+#value2 {
+  left: 33%;
+}
+
+#value3 {
+  left: 39%;
+}
+
+#value4 {
+  left: 45%;
+}
+
+#value5 {
+  right: 45%;
+}
+
+#value6 {
+  right: 39%;
+}
+
+#value7 {
+  right: 33%;
+}
+
+#value8 {
+  right: 27%;
+}
+
+#value9 {
+  right: 21%;
+}
+
+#createBtn {
+  bottom: 2%;
+  font-size: 25px;
+  left: 45%;
+}
+
+#bubbleBtn {
+  top: 2%;
+  left: 15%;
+}
+
+#quickBtn {
+  top: 2%;
+  left: 30%;
+}
+
+#selectionBtn {
+  top: 2%;
+  left: 45%;
+}
+
+#insertionBtn {
+  top: 2%;
+  right: 30%;
+}
+
+#mergeBtn {
+  top: 2%;
+  right: 15%;
+}

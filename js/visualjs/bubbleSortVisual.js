@@ -1,12 +1,8 @@
 /*jshint esversion: 6*/
 const createBubbleButton = ()=> {
   let newButton = document.createElement("button");
-  newButton.id = "bubbleButton";
+  newButton.id = "bubbleBtn";
   newButton.innerHTML = "Bubble Sort";
-  newButton.width = "10%";
-  newButton.style.position = "fixed";
-  newButton.style.top = "50px";
-  newButton.style.left = "45%";
   newButton.addEventListener("click", () => {
     visualBubble();
   });

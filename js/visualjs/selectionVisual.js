@@ -3,10 +3,6 @@ const createSelectionButton = ()=> {
   let newButton = document.createElement("button");
   newButton.id = "selectionBtn";
   newButton.innerHTML = "Selection Sort";
-  newButton.width = "10%";
-  newButton.style.position = "fixed";
-  newButton.style.top = "70px";
-  newButton.style.left = "45%";
   newButton.addEventListener("click", () => {
     visualSelection();
   });

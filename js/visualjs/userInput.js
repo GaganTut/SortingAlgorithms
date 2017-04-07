@@ -3,9 +3,6 @@ function createUserInput(parentID, createID, position) {
   let newInput = document.createElement("input");
   newInput.id = createID;
   newInput.placeholder = "Enter Number";
-  newInput.style.position = "fixed";
-  newInput.style.top = "10px";
-  newInput.style.left = position;
 
   let parent = document.querySelector(parentID);
   parent.appendChild(newInput);
@@ -13,18 +10,14 @@ function createUserInput(parentID, createID, position) {
 
 function createInputs() {
   for (var i = 0; i < 10; i++) {
-    createUserInput("#wholeBody", `value${i}`, `${10*i}%`);
+    createUserInput("#wholeBody", `value${i}`);
   }
 }
 
 function createInputButton() {
   let newButton = document.createElement("button");
-  newButton.id = "CreateNumPlanes";
+  newButton.id = "createBtn";
   newButton.innerHTML = "Create List";
-  newButton.width = "10%";
-  newButton.style.position = "fixed";
-  newButton.style.top = "30px";
-  newButton.style.left = "45%";
 
   let parent = document.querySelector("#wholeBody");
   parent.appendChild(newButton);
