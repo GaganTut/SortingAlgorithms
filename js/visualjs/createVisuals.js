@@ -27,8 +27,8 @@ const createNumEntity = (parent, value, position) => {
   newEntity.id = "plane" + value;
   newEntity.className = "customPlanes";
   newEntity.setAttribute("planeVal", value);
-  newEntity.setAttribute("material", "color: lightblue");
-  newEntity.setAttribute("geometry", `primitive: plane; width: 1; height: ${value}`);
+  newEntity.setAttribute("material", "color: lime");
+  newEntity.setAttribute("geometry", `primitive: plane; width: 0.5; height: ${value}`);
   newEntity.setAttribute("text", `value: ${value}; color: black; align: center; font: dejavu; width: 15`);
   newEntity.setAttribute("position", getPositions(position));
 
