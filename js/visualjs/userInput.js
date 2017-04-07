@@ -14,19 +14,8 @@ function createInputs() {
   }
 }
 
-function createInputButton() {
-  let newButton = document.createElement("button");
-  newButton.id = "createBtn";
-  newButton.innerHTML = "Create List";
-
-  let parent = document.querySelector("#wholeBody");
-  parent.appendChild(newButton);
-
-  return newButton;
-}
-
 createInputs();
-let userInputBtn = createInputButton();
+let userInputBtn = createButton("createBtn", "Create List");
 
 userInputBtn.addEventListener("click", () => {
   let userInputs = document.querySelectorAll("input");

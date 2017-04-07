@@ -1,17 +1,4 @@
 /*jshint esversion: 6*/
-const createInsertionButton = ()=> {
-  let newButton = document.createElement("button");
-  newButton.id = "insertionBtn";
-  newButton.innerHTML = "Insertion Sort";
-  newButton.addEventListener("click", () => {
-    visualInsertion();
-  });
-
-  let parent = document.querySelector("#wholeBody");
-  parent.appendChild(newButton);
-
-  return newButton;
-};
 
 const swapWithPrev = (node) => {
   node.parentNode.insertBefore(node, node.previousSibling);
@@ -73,15 +60,16 @@ const visualInsertion = () => {
     } else {
       l = 0;
     }
-
     l--;
 
     if(l >= 0) {
       innerLoop(l);
     }
   };
-
   outerLoop(1);
 };
 
-createInsertionButton();
+let insertionBtn = createButton("insertionBtn", "Insertion Sort");
+insertionBtn.addEventListener("click", () => {
+    visualInsertion();
+  });

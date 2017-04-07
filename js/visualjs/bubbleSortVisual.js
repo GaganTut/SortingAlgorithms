@@ -1,18 +1,4 @@
 /*jshint esversion: 6*/
-const createBubbleButton = ()=> {
-  let newButton = document.createElement("button");
-  newButton.id = "bubbleBtn";
-  newButton.innerHTML = "Bubble Sort";
-  newButton.addEventListener("click", () => {
-    visualBubble();
-  });
-
-  let parent = document.querySelector("#wholeBody");
-  parent.appendChild(newButton);
-
-  return newButton;
-};
-
 const swapNodes = (node) => {
   node.parentNode.insertBefore(node, node.previousSibling);
   node.removeAttribute("animation");
@@ -62,4 +48,7 @@ const visualBubble = () => {
   return;
 };
 
-createBubbleButton();
+let bubbleBtn = createButton("bubbleBtn", "Bubble Sort");
+bubbleBtn.addEventListener("click", () => {
+    visualBubble();
+  });

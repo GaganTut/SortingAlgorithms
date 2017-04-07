@@ -1,22 +1,4 @@
 /*jshint esversion: 6*/
-const createQuickButton = ()=> {
-  let newButton = document.createElement("button");
-  newButton.id = "quickBtn";
-  newButton.innerHTML = "Quick Sort";
-  newButton.addEventListener("click", () => {
-    let valueArr = document.querySelectorAll(".customPlanes");
-    let nodeArray = [];
-    for (let i = 0; i < valueArr.length; i++) {
-      nodeArray.push(valueArr[i]);
-    }
-    visualQuick(nodeArray);
-  });
-
-  let parent = document.querySelector("#wholeBody");
-  parent.appendChild(newButton);
-
-  return newButton;
-};
 
 const alignNodesBefore = (nodeArray, reference) => {
   let valueArr = document.querySelectorAll(".customPlanes");
@@ -85,4 +67,12 @@ const visualQuick = (nodeArray) => {
   }, 2000);
 };
 
-createQuickButton();
+let quickBtn = createButton("quickBtn", "Quick Sort");
+quickBtn.addEventListener("click", () => {
+  let valueArr = document.querySelectorAll(".customPlanes");
+  let nodeArray = [];
+  for (let i = 0; i < valueArr.length; i++) {
+    nodeArray.push(valueArr[i]);
+  }
+  visualQuick(nodeArray);
+});

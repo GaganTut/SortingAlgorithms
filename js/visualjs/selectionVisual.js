@@ -1,17 +1,4 @@
 /*jshint esversion: 6*/
-const createSelectionButton = ()=> {
-  let newButton = document.createElement("button");
-  newButton.id = "selectionBtn";
-  newButton.innerHTML = "Selection Sort";
-  newButton.addEventListener("click", () => {
-    visualSelection();
-  });
-
-  let parent = document.querySelector("#wholeBody");
-  parent.appendChild(newButton);
-
-  return newButton;
-};
 
 const pushNode = (node) => {
   let valueArr = document.querySelectorAll(".customPlanes");
@@ -54,4 +41,7 @@ const visualSelection = () => {
   selectionTime(0);
 };
 
-createSelectionButton();
+let selectionBtn = createButton("selectionBtn", "Selection Sort");
+selectionBtn.addEventListener("click", () => {
+  visualSelection();
+});
