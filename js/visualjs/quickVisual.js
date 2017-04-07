@@ -30,7 +30,7 @@ const alignNodesAfter = (nodeArray, reference) => {
 
 const animMiddle = (node) => {
   node.removeAttribute("animation");
-  node.setAttribute("animation__", `property: material; dir: normal; dur: 800; loop: false; to: color: yellow`);
+  node.setAttribute("animation__", `property: material; dir: normal; dur: 950; loop: false; to: color: yellow`);
 };
 
 const visualQuick = (nodeArray) => {
@@ -66,13 +66,3 @@ const visualQuick = (nodeArray) => {
     visualQuick(rightArr);
   }, 2000);
 };
-
-let quickBtn = createButton("quickBtn", "Quick Sort");
-quickBtn.addEventListener("click", () => {
-  let valueArr = document.querySelectorAll(".customPlanes");
-  let nodeArray = [];
-  for (let i = 0; i < valueArr.length; i++) {
-    nodeArray.push(valueArr[i]);
-  }
-  visualQuick(nodeArray);
-});

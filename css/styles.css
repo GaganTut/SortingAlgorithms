@@ -13,7 +13,7 @@ button {
 }
 input {
   background-color: beige;
-  bottom: 10%;
+  bottom: 7%;
   color: red;
   height: 2%;
   position: fixed;
@@ -36,50 +36,104 @@ input::placeholder {
 }
 
 #value0 {
+  bottom: 11%;
   left: 21%;
 }
 
 #value1 {
+  bottom: 11%;
   left: 27%;
 }
 
 #value2 {
+  bottom: 11%;
   left: 33%;
 }
 
 #value3 {
+  bottom: 11%;
   left: 39%;
 }
 
 #value4 {
+  bottom: 11%;
   left: 45%;
 }
 
 #value5 {
+  bottom: 11%;
   right: 45%;
 }
 
 #value6 {
+  bottom: 11%;
   right: 39%;
 }
 
 #value7 {
+  bottom: 11%;
   right: 33%;
 }
 
 #value8 {
+  bottom: 11%;
   right: 27%;
 }
 
 #value9 {
+  bottom: 11%;
+  right: 21%;
+}
+
+#value10 {
+  left: 21%;
+}
+
+#value11 {
+  left: 27%;
+}
+
+#value12 {
+  left: 33%;
+}
+
+#value13 {
+  left: 39%;
+}
+
+#value14 {
+  left: 45%;
+}
+
+#value15 {
+  right: 45%;
+}
+
+#value16 {
+  right: 39%;
+}
+
+#value17 {
+  right: 33%;
+}
+
+#value18 {
+  right: 27%;
+}
+
+#value19 {
   right: 21%;
 }
 
 #createBtn {
-  bottom: 2%;
-  left: 45%;
+  bottom: 1%;
+  left: 30%;
 }
 
+#clearBtn {
+  bottom: 1%;
+  right: 30%;
+}
 #bubbleBtn {
   top: 8%;
   left: 15%;
