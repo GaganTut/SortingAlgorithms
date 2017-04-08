@@ -62,3 +62,12 @@ selectionBtn.addEventListener("click", () => {
 });
 
 let mergeBtn = createButton("mergeBtn", "Merge Sort");
+mergeBtn.addEventListener("click", () => {
+  disableSorts();
+  let valueArr = document.querySelectorAll(".customPlanes");
+  let nodeArray = [];
+  for (let i = 0; i < valueArr.length; i++) {
+    nodeArray.push(valueArr[i]);
+  }
+  visualMerge(nodeArray);
+});

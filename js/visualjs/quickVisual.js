@@ -1,4 +1,36 @@
 /*jshint esversion: 6*/
+const visualQuick = (nodeArray) => {
+  if (nodeArray.length <= 1) {
+    return nodeArray;
+  }
+  let leftArr = [];
+  let middleArr = [nodeArray[0]];
+  let rightArr = [];
+
+  for (let j = 1; j < nodeArray.length; j++) {
+    if (Number(nodeArray[j].getAttribute("planeVal")) >= Number(nodeArray[0].getAttribute("planeVal"))) {
+      rightArr.push(nodeArray[j]);
+    } else {
+      leftArr.push(nodeArray[j]);
+    }
+  }
+  animMiddle(middleArr[0]);
+
+  setTimeout(() => {
+    alignNodesBefore(rightArr, middleArr[0]);
+  }, 1000);
+
+  setTimeout(() => {
+    alignNodesAfter(leftArr,middleArr[middleArr.length -1]);
+  }, 1000);
+
+  setTimeout(() => {
+    visualQuick(leftArr);
+  }, 2000);
+  setTimeout(() => {
+    visualQuick(rightArr);
+  }, 2000);
+};
 
 const alignNodesBefore = (nodeArray, reference) => {
   let valueArr = document.querySelectorAll(".customPlanes");
@@ -31,38 +63,4 @@ const alignNodesAfter = (nodeArray, reference) => {
 const animMiddle = (node) => {
   node.removeAttribute("animation");
   node.setAttribute("animation__", `property: material; dir: normal; dur: 950; loop: false; to: color: yellow`);
-};
-
-const visualQuick = (nodeArray) => {
-  if (nodeArray.length <= 1) {
-    return nodeArray;
-  }
-
-  let leftArr = [];
-  let middleArr = [nodeArray[0]];
-  let rightArr = [];
-
-  for (let j = 1; j < nodeArray.length; j++) {
-    if (Number(nodeArray[j].getAttribute("planeVal")) >= Number(nodeArray[0].getAttribute("planeVal"))) {
-      rightArr.push(nodeArray[j]);
-    } else {
-      leftArr.push(nodeArray[j]);
-    }
-  }
-  animMiddle(middleArr[0]);
-
-  setTimeout(() => {
-    alignNodesBefore(rightArr, middleArr[0]);
-  }, 1000);
-
-  setTimeout(() => {
-    alignNodesAfter(leftArr,middleArr[middleArr.length -1]);
-  }, 1000);
-
-  setTimeout(() => {
-    visualQuick(leftArr);
-  }, 2000);
-  setTimeout(() => {
-    visualQuick(rightArr);
-  }, 2000);
 };
